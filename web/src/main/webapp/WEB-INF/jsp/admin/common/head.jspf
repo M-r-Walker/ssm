@@ -1,0 +1,14 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set value="${pageContext.request.contextPath }" var="ldms" />
+<!-- 下面是easyui的环境 -->
+<link rel="stylesheet" href="${ldms }/static/jquery-easyui/themes/icon.css" type="text/css"></link>
+<link rel="stylesheet" href="${ldms }/static/jquery-easyui/themes/default/easyui.css" type="text/css"></link>
+<script type="text/javascript" src="${ldms }/static/jquery-easyui/jquery.min.js"></script>
+<script type="text/javascript" src="${ldms }/static/jquery-easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="${ldms }/static/jquery-easyui/locale/easyui-lang-zh_CN.js"></script>
+<script type="text/javascript" src="${ldms }/static/jquery.min.js"></script>
+<script type="text/javascript" src="${ldms }/static/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="${ldms }/static/js/jquery.layout.extend.js"></script>
+<script type="text/javascript" src="${ldms }/static/js/searchFrame.js"></script>
+<script type="text/javascript" src="${ldms }/static/js/style.css"></script>

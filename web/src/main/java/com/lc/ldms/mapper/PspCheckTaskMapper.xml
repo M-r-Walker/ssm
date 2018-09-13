@@ -1,0 +1,854 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lc.ldms.dao.PspCheckTaskMapper" >
+  <resultMap id="BaseResultMap" type="com.lc.ldms.model.PspCheckTask" >
+    <id column="PSP_TASK_NO" property="pspTaskNo" jdbcType="VARCHAR" />
+    <result column="CUS_MNG_NAME" property="cusMngName" jdbcType="VARCHAR" />
+    <result column="CUS_MNG_ID" property="cusMngId" jdbcType="VARCHAR" />
+    <result column="MODEL_NO" property="modelNo" jdbcType="VARCHAR" />
+    <result column="CUS_ID" property="cusId" jdbcType="VARCHAR" />
+    <result column="CUS_NAME" property="cusName" jdbcType="VARCHAR" />
+    <result column="CUS_TYPE" property="cusType" jdbcType="CHAR" />
+    <result column="CONT_ID" property="contId" jdbcType="VARCHAR" />
+    <result column="BILL_ID" property="billId" jdbcType="VARCHAR" />
+    <result column="CHK_TYPE" property="chkType" jdbcType="CHAR" />
+    <result column="CHK_NUM" property="chkNum" jdbcType="DECIMAL" />
+    <result column="CHK_BLN" property="chkBln" jdbcType="DECIMAL" />
+    <result column="CRT_DATE" property="crtDate" jdbcType="CHAR" />
+    <result column="RQR_FIN_DATE" property="rqrFinDate" jdbcType="CHAR" />
+    <result column="REAL_FIN_DATE" property="realFinDate" jdbcType="CHAR" />
+    <result column="TASK_PRO_BR_ID" property="taskProBrId" jdbcType="VARCHAR" />
+    <result column="TASK_PRO_BR_NAME" property="taskProBrName" jdbcType="VARCHAR" />
+    <result column="TSK_PRO_ID" property="tskProId" jdbcType="VARCHAR" />
+    <result column="TSK_PRO_NAME" property="tskProName" jdbcType="VARCHAR" />
+    <result column="INPUT_BR_ID" property="inputBrId" jdbcType="VARCHAR" />
+    <result column="INPUT_BR_NAME" property="inputBrName" jdbcType="VARCHAR" />
+    <result column="TASK_EXE_ID" property="taskExeId" jdbcType="VARCHAR" />
+    <result column="TASK_EXE_NAME" property="taskExeName" jdbcType="VARCHAR" />
+    <result column="MNG_BR_ID" property="mngBrId" jdbcType="VARCHAR" />
+    <result column="MNG_BR_NAME" property="mngBrName" jdbcType="VARCHAR" />
+    <result column="CHK_STATE" property="chkState" jdbcType="VARCHAR" />
+    <result column="APPROVE_STATUS" property="approveStatus" jdbcType="CHAR" />
+    <result column="MODIFY_IND" property="modifyInd" jdbcType="VARCHAR" />
+    <result column="CUS_ASSORT" property="cusAssort" jdbcType="VARCHAR" />
+    <result column="CUS_ASSORT_REASON" property="cusAssortReason" jdbcType="VARCHAR" />
+    <result column="LMT_PLAN_DESC" property="lmtPlanDesc" jdbcType="VARCHAR" />
+    <result column="CHECK_FINALLY_CON" property="checkFinallyCon" jdbcType="VARCHAR" />
+    <result column="MNG_LMT_PLAN" property="mngLmtPlan" jdbcType="VARCHAR" />
+    <result column="MEET_PERSONS" property="meetPersons" jdbcType="VARCHAR" />
+    <result column="CHK_PLACE" property="chkPlace" jdbcType="VARCHAR" />
+    <result column="CHK_DATE" property="chkDate" jdbcType="VARCHAR" />
+    <result column="PRD_CODE" property="prdCode" jdbcType="VARCHAR" />
+    <result column="PRD_NAME" property="prdName" jdbcType="VARCHAR" />
+    <result column="IS_FEED_BACK" property="isFeedBack" jdbcType="CHAR" />
+    <result column="FEED_BACK" property="feedBack" jdbcType="VARCHAR" />
+    <result column="CUS_VALUE" property="cusValue" jdbcType="VARCHAR" />
+    <result column="CUS_RISK" property="cusRisk" jdbcType="VARCHAR" />
+    <result column="CUS_RISK_REASON" property="cusRiskReason" jdbcType="VARCHAR" />
+    <result column="OTHER_REASON" property="otherReason" jdbcType="VARCHAR" />
+    <result column="REPORT_SCORE" property="reportScore" jdbcType="DECIMAL" />
+    <result column="ALL_CREDIT_REPORT_ANALYSIS" property="allCreditReportAnalysis" jdbcType="VARCHAR" />
+    <result column="CUS_IND_VALUE" property="cusIndValue" jdbcType="VARCHAR" />
+    <result column="MODIFY_DESC" property="modifyDesc" jdbcType="VARCHAR" />
+    <result column="SUGGEST" property="suggest" jdbcType="VARCHAR" />
+    <result column="ISUPPER" property="isupper" jdbcType="VARCHAR" />
+    <result column="LAST_MODIFY_IND" property="lastModifyInd" jdbcType="VARCHAR" />
+    <result column="LAST_APPROVE" property="lastApprove" jdbcType="VARCHAR" />
+    <result column="LAST_CUS_RISK" property="lastCusRisk" jdbcType="VARCHAR" />
+    <result column="LAST_MNG_LMT_PLAN" property="lastMngLmtPlan" jdbcType="VARCHAR" />
+    <result column="LAST_CUS_VALUE" property="lastCusValue" jdbcType="VARCHAR" />
+    <result column="APPROVE_END_DATE" property="approveEndDate" jdbcType="VARCHAR" />
+    <result column="CHK_MODE" property="chkMode" jdbcType="CHAR" />
+    <result column="APPROVE_ORG" property="approveOrg" jdbcType="CHAR" />
+    <result column="HAS_ADDTIONAL_SUGGEST" property="hasAddtionalSuggest" jdbcType="CHAR" />
+    <result column="ADDTIONAL_SUGGEST" property="addtionalSuggest" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PSP_TASK_NO, CUS_MNG_NAME, CUS_MNG_ID, MODEL_NO, CUS_ID, CUS_NAME, CUS_TYPE, CONT_ID, 
+    BILL_ID, CHK_TYPE, CHK_NUM, CHK_BLN, CRT_DATE, RQR_FIN_DATE, REAL_FIN_DATE, TASK_PRO_BR_ID, 
+    TASK_PRO_BR_NAME, TSK_PRO_ID, TSK_PRO_NAME, INPUT_BR_ID, INPUT_BR_NAME, TASK_EXE_ID, 
+    TASK_EXE_NAME, MNG_BR_ID, MNG_BR_NAME, CHK_STATE, APPROVE_STATUS, MODIFY_IND, CUS_ASSORT, 
+    CUS_ASSORT_REASON, LMT_PLAN_DESC, CHECK_FINALLY_CON, MNG_LMT_PLAN, MEET_PERSONS, 
+    CHK_PLACE, CHK_DATE, PRD_CODE, PRD_NAME, IS_FEED_BACK, FEED_BACK, CUS_VALUE, CUS_RISK, 
+    CUS_RISK_REASON, OTHER_REASON, REPORT_SCORE, ALL_CREDIT_REPORT_ANALYSIS, CUS_IND_VALUE, 
+    MODIFY_DESC, SUGGEST, ISUPPER, LAST_MODIFY_IND, LAST_APPROVE, LAST_CUS_RISK, LAST_MNG_LMT_PLAN, 
+    LAST_CUS_VALUE, APPROVE_END_DATE, CHK_MODE, APPROVE_ORG, HAS_ADDTIONAL_SUGGEST, ADDTIONAL_SUGGEST
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from SSMDATA.PSP_CHECK_TASK
+    where PSP_TASK_NO = #{pspTaskNo,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from SSMDATA.PSP_CHECK_TASK
+    where PSP_TASK_NO = #{pspTaskNo,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.lc.ldms.model.PspCheckTask" >
+    insert into SSMDATA.PSP_CHECK_TASK (PSP_TASK_NO, CUS_MNG_NAME, CUS_MNG_ID, 
+      MODEL_NO, CUS_ID, CUS_NAME, 
+      CUS_TYPE, CONT_ID, BILL_ID, 
+      CHK_TYPE, CHK_NUM, CHK_BLN, 
+      CRT_DATE, RQR_FIN_DATE, REAL_FIN_DATE, 
+      TASK_PRO_BR_ID, TASK_PRO_BR_NAME, TSK_PRO_ID, 
+      TSK_PRO_NAME, INPUT_BR_ID, INPUT_BR_NAME, 
+      TASK_EXE_ID, TASK_EXE_NAME, MNG_BR_ID, 
+      MNG_BR_NAME, CHK_STATE, APPROVE_STATUS, 
+      MODIFY_IND, CUS_ASSORT, CUS_ASSORT_REASON, 
+      LMT_PLAN_DESC, CHECK_FINALLY_CON, MNG_LMT_PLAN, 
+      MEET_PERSONS, CHK_PLACE, CHK_DATE, 
+      PRD_CODE, PRD_NAME, IS_FEED_BACK, 
+      FEED_BACK, CUS_VALUE, CUS_RISK, 
+      CUS_RISK_REASON, OTHER_REASON, REPORT_SCORE, 
+      ALL_CREDIT_REPORT_ANALYSIS, CUS_IND_VALUE, MODIFY_DESC, 
+      SUGGEST, ISUPPER, LAST_MODIFY_IND, 
+      LAST_APPROVE, LAST_CUS_RISK, LAST_MNG_LMT_PLAN, 
+      LAST_CUS_VALUE, APPROVE_END_DATE, CHK_MODE, 
+      APPROVE_ORG, HAS_ADDTIONAL_SUGGEST, ADDTIONAL_SUGGEST
+      )
+    values (#{pspTaskNo,jdbcType=VARCHAR}, #{cusMngName,jdbcType=VARCHAR}, #{cusMngId,jdbcType=VARCHAR}, 
+      #{modelNo,jdbcType=VARCHAR}, #{cusId,jdbcType=VARCHAR}, #{cusName,jdbcType=VARCHAR}, 
+      #{cusType,jdbcType=CHAR}, #{contId,jdbcType=VARCHAR}, #{billId,jdbcType=VARCHAR}, 
+      #{chkType,jdbcType=CHAR}, #{chkNum,jdbcType=DECIMAL}, #{chkBln,jdbcType=DECIMAL}, 
+      #{crtDate,jdbcType=CHAR}, #{rqrFinDate,jdbcType=CHAR}, #{realFinDate,jdbcType=CHAR}, 
+      #{taskProBrId,jdbcType=VARCHAR}, #{taskProBrName,jdbcType=VARCHAR}, #{tskProId,jdbcType=VARCHAR}, 
+      #{tskProName,jdbcType=VARCHAR}, #{inputBrId,jdbcType=VARCHAR}, #{inputBrName,jdbcType=VARCHAR}, 
+      #{taskExeId,jdbcType=VARCHAR}, #{taskExeName,jdbcType=VARCHAR}, #{mngBrId,jdbcType=VARCHAR}, 
+      #{mngBrName,jdbcType=VARCHAR}, #{chkState,jdbcType=VARCHAR}, #{approveStatus,jdbcType=CHAR}, 
+      #{modifyInd,jdbcType=VARCHAR}, #{cusAssort,jdbcType=VARCHAR}, #{cusAssortReason,jdbcType=VARCHAR}, 
+      #{lmtPlanDesc,jdbcType=VARCHAR}, #{checkFinallyCon,jdbcType=VARCHAR}, #{mngLmtPlan,jdbcType=VARCHAR}, 
+      #{meetPersons,jdbcType=VARCHAR}, #{chkPlace,jdbcType=VARCHAR}, #{chkDate,jdbcType=VARCHAR}, 
+      #{prdCode,jdbcType=VARCHAR}, #{prdName,jdbcType=VARCHAR}, #{isFeedBack,jdbcType=CHAR}, 
+      #{feedBack,jdbcType=VARCHAR}, #{cusValue,jdbcType=VARCHAR}, #{cusRisk,jdbcType=VARCHAR}, 
+      #{cusRiskReason,jdbcType=VARCHAR}, #{otherReason,jdbcType=VARCHAR}, #{reportScore,jdbcType=DECIMAL}, 
+      #{allCreditReportAnalysis,jdbcType=VARCHAR}, #{cusIndValue,jdbcType=VARCHAR}, #{modifyDesc,jdbcType=VARCHAR}, 
+      #{suggest,jdbcType=VARCHAR}, #{isupper,jdbcType=VARCHAR}, #{lastModifyInd,jdbcType=VARCHAR}, 
+      #{lastApprove,jdbcType=VARCHAR}, #{lastCusRisk,jdbcType=VARCHAR}, #{lastMngLmtPlan,jdbcType=VARCHAR}, 
+      #{lastCusValue,jdbcType=VARCHAR}, #{approveEndDate,jdbcType=VARCHAR}, #{chkMode,jdbcType=CHAR}, 
+      #{approveOrg,jdbcType=CHAR}, #{hasAddtionalSuggest,jdbcType=CHAR}, #{addtionalSuggest,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lc.ldms.model.PspCheckTask" >
+    insert into SSMDATA.PSP_CHECK_TASK
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pspTaskNo != null" >
+        PSP_TASK_NO,
+      </if>
+      <if test="cusMngName != null" >
+        CUS_MNG_NAME,
+      </if>
+      <if test="cusMngId != null" >
+        CUS_MNG_ID,
+      </if>
+      <if test="modelNo != null" >
+        MODEL_NO,
+      </if>
+      <if test="cusId != null" >
+        CUS_ID,
+      </if>
+      <if test="cusName != null" >
+        CUS_NAME,
+      </if>
+      <if test="cusType != null" >
+        CUS_TYPE,
+      </if>
+      <if test="contId != null" >
+        CONT_ID,
+      </if>
+      <if test="billId != null" >
+        BILL_ID,
+      </if>
+      <if test="chkType != null" >
+        CHK_TYPE,
+      </if>
+      <if test="chkNum != null" >
+        CHK_NUM,
+      </if>
+      <if test="chkBln != null" >
+        CHK_BLN,
+      </if>
+      <if test="crtDate != null" >
+        CRT_DATE,
+      </if>
+      <if test="rqrFinDate != null" >
+        RQR_FIN_DATE,
+      </if>
+      <if test="realFinDate != null" >
+        REAL_FIN_DATE,
+      </if>
+      <if test="taskProBrId != null" >
+        TASK_PRO_BR_ID,
+      </if>
+      <if test="taskProBrName != null" >
+        TASK_PRO_BR_NAME,
+      </if>
+      <if test="tskProId != null" >
+        TSK_PRO_ID,
+      </if>
+      <if test="tskProName != null" >
+        TSK_PRO_NAME,
+      </if>
+      <if test="inputBrId != null" >
+        INPUT_BR_ID,
+      </if>
+      <if test="inputBrName != null" >
+        INPUT_BR_NAME,
+      </if>
+      <if test="taskExeId != null" >
+        TASK_EXE_ID,
+      </if>
+      <if test="taskExeName != null" >
+        TASK_EXE_NAME,
+      </if>
+      <if test="mngBrId != null" >
+        MNG_BR_ID,
+      </if>
+      <if test="mngBrName != null" >
+        MNG_BR_NAME,
+      </if>
+      <if test="chkState != null" >
+        CHK_STATE,
+      </if>
+      <if test="approveStatus != null" >
+        APPROVE_STATUS,
+      </if>
+      <if test="modifyInd != null" >
+        MODIFY_IND,
+      </if>
+      <if test="cusAssort != null" >
+        CUS_ASSORT,
+      </if>
+      <if test="cusAssortReason != null" >
+        CUS_ASSORT_REASON,
+      </if>
+      <if test="lmtPlanDesc != null" >
+        LMT_PLAN_DESC,
+      </if>
+      <if test="checkFinallyCon != null" >
+        CHECK_FINALLY_CON,
+      </if>
+      <if test="mngLmtPlan != null" >
+        MNG_LMT_PLAN,
+      </if>
+      <if test="meetPersons != null" >
+        MEET_PERSONS,
+      </if>
+      <if test="chkPlace != null" >
+        CHK_PLACE,
+      </if>
+      <if test="chkDate != null" >
+        CHK_DATE,
+      </if>
+      <if test="prdCode != null" >
+        PRD_CODE,
+      </if>
+      <if test="prdName != null" >
+        PRD_NAME,
+      </if>
+      <if test="isFeedBack != null" >
+        IS_FEED_BACK,
+      </if>
+      <if test="feedBack != null" >
+        FEED_BACK,
+      </if>
+      <if test="cusValue != null" >
+        CUS_VALUE,
+      </if>
+      <if test="cusRisk != null" >
+        CUS_RISK,
+      </if>
+      <if test="cusRiskReason != null" >
+        CUS_RISK_REASON,
+      </if>
+      <if test="otherReason != null" >
+        OTHER_REASON,
+      </if>
+      <if test="reportScore != null" >
+        REPORT_SCORE,
+      </if>
+      <if test="allCreditReportAnalysis != null" >
+        ALL_CREDIT_REPORT_ANALYSIS,
+      </if>
+      <if test="cusIndValue != null" >
+        CUS_IND_VALUE,
+      </if>
+      <if test="modifyDesc != null" >
+        MODIFY_DESC,
+      </if>
+      <if test="suggest != null" >
+        SUGGEST,
+      </if>
+      <if test="isupper != null" >
+        ISUPPER,
+      </if>
+      <if test="lastModifyInd != null" >
+        LAST_MODIFY_IND,
+      </if>
+      <if test="lastApprove != null" >
+        LAST_APPROVE,
+      </if>
+      <if test="lastCusRisk != null" >
+        LAST_CUS_RISK,
+      </if>
+      <if test="lastMngLmtPlan != null" >
+        LAST_MNG_LMT_PLAN,
+      </if>
+      <if test="lastCusValue != null" >
+        LAST_CUS_VALUE,
+      </if>
+      <if test="approveEndDate != null" >
+        APPROVE_END_DATE,
+      </if>
+      <if test="chkMode != null" >
+        CHK_MODE,
+      </if>
+      <if test="approveOrg != null" >
+        APPROVE_ORG,
+      </if>
+      <if test="hasAddtionalSuggest != null" >
+        HAS_ADDTIONAL_SUGGEST,
+      </if>
+      <if test="addtionalSuggest != null" >
+        ADDTIONAL_SUGGEST,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pspTaskNo != null" >
+        #{pspTaskNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cusMngName != null" >
+        #{cusMngName,jdbcType=VARCHAR},
+      </if>
+      <if test="cusMngId != null" >
+        #{cusMngId,jdbcType=VARCHAR},
+      </if>
+      <if test="modelNo != null" >
+        #{modelNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cusId != null" >
+        #{cusId,jdbcType=VARCHAR},
+      </if>
+      <if test="cusName != null" >
+        #{cusName,jdbcType=VARCHAR},
+      </if>
+      <if test="cusType != null" >
+        #{cusType,jdbcType=CHAR},
+      </if>
+      <if test="contId != null" >
+        #{contId,jdbcType=VARCHAR},
+      </if>
+      <if test="billId != null" >
+        #{billId,jdbcType=VARCHAR},
+      </if>
+      <if test="chkType != null" >
+        #{chkType,jdbcType=CHAR},
+      </if>
+      <if test="chkNum != null" >
+        #{chkNum,jdbcType=DECIMAL},
+      </if>
+      <if test="chkBln != null" >
+        #{chkBln,jdbcType=DECIMAL},
+      </if>
+      <if test="crtDate != null" >
+        #{crtDate,jdbcType=CHAR},
+      </if>
+      <if test="rqrFinDate != null" >
+        #{rqrFinDate,jdbcType=CHAR},
+      </if>
+      <if test="realFinDate != null" >
+        #{realFinDate,jdbcType=CHAR},
+      </if>
+      <if test="taskProBrId != null" >
+        #{taskProBrId,jdbcType=VARCHAR},
+      </if>
+      <if test="taskProBrName != null" >
+        #{taskProBrName,jdbcType=VARCHAR},
+      </if>
+      <if test="tskProId != null" >
+        #{tskProId,jdbcType=VARCHAR},
+      </if>
+      <if test="tskProName != null" >
+        #{tskProName,jdbcType=VARCHAR},
+      </if>
+      <if test="inputBrId != null" >
+        #{inputBrId,jdbcType=VARCHAR},
+      </if>
+      <if test="inputBrName != null" >
+        #{inputBrName,jdbcType=VARCHAR},
+      </if>
+      <if test="taskExeId != null" >
+        #{taskExeId,jdbcType=VARCHAR},
+      </if>
+      <if test="taskExeName != null" >
+        #{taskExeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mngBrId != null" >
+        #{mngBrId,jdbcType=VARCHAR},
+      </if>
+      <if test="mngBrName != null" >
+        #{mngBrName,jdbcType=VARCHAR},
+      </if>
+      <if test="chkState != null" >
+        #{chkState,jdbcType=VARCHAR},
+      </if>
+      <if test="approveStatus != null" >
+        #{approveStatus,jdbcType=CHAR},
+      </if>
+      <if test="modifyInd != null" >
+        #{modifyInd,jdbcType=VARCHAR},
+      </if>
+      <if test="cusAssort != null" >
+        #{cusAssort,jdbcType=VARCHAR},
+      </if>
+      <if test="cusAssortReason != null" >
+        #{cusAssortReason,jdbcType=VARCHAR},
+      </if>
+      <if test="lmtPlanDesc != null" >
+        #{lmtPlanDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="checkFinallyCon != null" >
+        #{checkFinallyCon,jdbcType=VARCHAR},
+      </if>
+      <if test="mngLmtPlan != null" >
+        #{mngLmtPlan,jdbcType=VARCHAR},
+      </if>
+      <if test="meetPersons != null" >
+        #{meetPersons,jdbcType=VARCHAR},
+      </if>
+      <if test="chkPlace != null" >
+        #{chkPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="chkDate != null" >
+        #{chkDate,jdbcType=VARCHAR},
+      </if>
+      <if test="prdCode != null" >
+        #{prdCode,jdbcType=VARCHAR},
+      </if>
+      <if test="prdName != null" >
+        #{prdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isFeedBack != null" >
+        #{isFeedBack,jdbcType=CHAR},
+      </if>
+      <if test="feedBack != null" >
+        #{feedBack,jdbcType=VARCHAR},
+      </if>
+      <if test="cusValue != null" >
+        #{cusValue,jdbcType=VARCHAR},
+      </if>
+      <if test="cusRisk != null" >
+        #{cusRisk,jdbcType=VARCHAR},
+      </if>
+      <if test="cusRiskReason != null" >
+        #{cusRiskReason,jdbcType=VARCHAR},
+      </if>
+      <if test="otherReason != null" >
+        #{otherReason,jdbcType=VARCHAR},
+      </if>
+      <if test="reportScore != null" >
+        #{reportScore,jdbcType=DECIMAL},
+      </if>
+      <if test="allCreditReportAnalysis != null" >
+        #{allCreditReportAnalysis,jdbcType=VARCHAR},
+      </if>
+      <if test="cusIndValue != null" >
+        #{cusIndValue,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyDesc != null" >
+        #{modifyDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="suggest != null" >
+        #{suggest,jdbcType=VARCHAR},
+      </if>
+      <if test="isupper != null" >
+        #{isupper,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyInd != null" >
+        #{lastModifyInd,jdbcType=VARCHAR},
+      </if>
+      <if test="lastApprove != null" >
+        #{lastApprove,jdbcType=VARCHAR},
+      </if>
+      <if test="lastCusRisk != null" >
+        #{lastCusRisk,jdbcType=VARCHAR},
+      </if>
+      <if test="lastMngLmtPlan != null" >
+        #{lastMngLmtPlan,jdbcType=VARCHAR},
+      </if>
+      <if test="lastCusValue != null" >
+        #{lastCusValue,jdbcType=VARCHAR},
+      </if>
+      <if test="approveEndDate != null" >
+        #{approveEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="chkMode != null" >
+        #{chkMode,jdbcType=CHAR},
+      </if>
+      <if test="approveOrg != null" >
+        #{approveOrg,jdbcType=CHAR},
+      </if>
+      <if test="hasAddtionalSuggest != null" >
+        #{hasAddtionalSuggest,jdbcType=CHAR},
+      </if>
+      <if test="addtionalSuggest != null" >
+        #{addtionalSuggest,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lc.ldms.model.PspCheckTask" >
+    update SSMDATA.PSP_CHECK_TASK
+    <set >
+      <if test="cusMngName != null" >
+        CUS_MNG_NAME = #{cusMngName,jdbcType=VARCHAR},
+      </if>
+      <if test="cusMngId != null" >
+        CUS_MNG_ID = #{cusMngId,jdbcType=VARCHAR},
+      </if>
+      <if test="modelNo != null" >
+        MODEL_NO = #{modelNo,jdbcType=VARCHAR},
+      </if>
+      <if test="cusId != null" >
+        CUS_ID = #{cusId,jdbcType=VARCHAR},
+      </if>
+      <if test="cusName != null" >
+        CUS_NAME = #{cusName,jdbcType=VARCHAR},
+      </if>
+      <if test="cusType != null" >
+        CUS_TYPE = #{cusType,jdbcType=CHAR},
+      </if>
+      <if test="contId != null" >
+        CONT_ID = #{contId,jdbcType=VARCHAR},
+      </if>
+      <if test="billId != null" >
+        BILL_ID = #{billId,jdbcType=VARCHAR},
+      </if>
+      <if test="chkType != null" >
+        CHK_TYPE = #{chkType,jdbcType=CHAR},
+      </if>
+      <if test="chkNum != null" >
+        CHK_NUM = #{chkNum,jdbcType=DECIMAL},
+      </if>
+      <if test="chkBln != null" >
+        CHK_BLN = #{chkBln,jdbcType=DECIMAL},
+      </if>
+      <if test="crtDate != null" >
+        CRT_DATE = #{crtDate,jdbcType=CHAR},
+      </if>
+      <if test="rqrFinDate != null" >
+        RQR_FIN_DATE = #{rqrFinDate,jdbcType=CHAR},
+      </if>
+      <if test="realFinDate != null" >
+        REAL_FIN_DATE = #{realFinDate,jdbcType=CHAR},
+      </if>
+      <if test="taskProBrId != null" >
+        TASK_PRO_BR_ID = #{taskProBrId,jdbcType=VARCHAR},
+      </if>
+      <if test="taskProBrName != null" >
+        TASK_PRO_BR_NAME = #{taskProBrName,jdbcType=VARCHAR},
+      </if>
+      <if test="tskProId != null" >
+        TSK_PRO_ID = #{tskProId,jdbcType=VARCHAR},
+      </if>
+      <if test="tskProName != null" >
+        TSK_PRO_NAME = #{tskProName,jdbcType=VARCHAR},
+      </if>
+      <if test="inputBrId != null" >
+        INPUT_BR_ID = #{inputBrId,jdbcType=VARCHAR},
+      </if>
+      <if test="inputBrName != null" >
+        INPUT_BR_NAME = #{inputBrName,jdbcType=VARCHAR},
+      </if>
+      <if test="taskExeId != null" >
+        TASK_EXE_ID = #{taskExeId,jdbcType=VARCHAR},
+      </if>
+      <if test="taskExeName != null" >
+        TASK_EXE_NAME = #{taskExeName,jdbcType=VARCHAR},
+      </if>
+      <if test="mngBrId != null" >
+        MNG_BR_ID = #{mngBrId,jdbcType=VARCHAR},
+      </if>
+      <if test="mngBrName != null" >
+        MNG_BR_NAME = #{mngBrName,jdbcType=VARCHAR},
+      </if>
+      <if test="chkState != null" >
+        CHK_STATE = #{chkState,jdbcType=VARCHAR},
+      </if>
+      <if test="approveStatus != null" >
+        APPROVE_STATUS = #{approveStatus,jdbcType=CHAR},
+      </if>
+      <if test="modifyInd != null" >
+        MODIFY_IND = #{modifyInd,jdbcType=VARCHAR},
+      </if>
+      <if test="cusAssort != null" >
+        CUS_ASSORT = #{cusAssort,jdbcType=VARCHAR},
+      </if>
+      <if test="cusAssortReason != null" >
+        CUS_ASSORT_REASON = #{cusAssortReason,jdbcType=VARCHAR},
+      </if>
+      <if test="lmtPlanDesc != null" >
+        LMT_PLAN_DESC = #{lmtPlanDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="checkFinallyCon != null" >
+        CHECK_FINALLY_CON = #{checkFinallyCon,jdbcType=VARCHAR},
+      </if>
+      <if test="mngLmtPlan != null" >
+        MNG_LMT_PLAN = #{mngLmtPlan,jdbcType=VARCHAR},
+      </if>
+      <if test="meetPersons != null" >
+        MEET_PERSONS = #{meetPersons,jdbcType=VARCHAR},
+      </if>
+      <if test="chkPlace != null" >
+        CHK_PLACE = #{chkPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="chkDate != null" >
+        CHK_DATE = #{chkDate,jdbcType=VARCHAR},
+      </if>
+      <if test="prdCode != null" >
+        PRD_CODE = #{prdCode,jdbcType=VARCHAR},
+      </if>
+      <if test="prdName != null" >
+        PRD_NAME = #{prdName,jdbcType=VARCHAR},
+      </if>
+      <if test="isFeedBack != null" >
+        IS_FEED_BACK = #{isFeedBack,jdbcType=CHAR},
+      </if>
+      <if test="feedBack != null" >
+        FEED_BACK = #{feedBack,jdbcType=VARCHAR},
+      </if>
+      <if test="cusValue != null" >
+        CUS_VALUE = #{cusValue,jdbcType=VARCHAR},
+      </if>
+      <if test="cusRisk != null" >
+        CUS_RISK = #{cusRisk,jdbcType=VARCHAR},
+      </if>
+      <if test="cusRiskReason != null" >
+        CUS_RISK_REASON = #{cusRiskReason,jdbcType=VARCHAR},
+      </if>
+      <if test="otherReason != null" >
+        OTHER_REASON = #{otherReason,jdbcType=VARCHAR},
+      </if>
+      <if test="reportScore != null" >
+        REPORT_SCORE = #{reportScore,jdbcType=DECIMAL},
+      </if>
+      <if test="allCreditReportAnalysis != null" >
+        ALL_CREDIT_REPORT_ANALYSIS = #{allCreditReportAnalysis,jdbcType=VARCHAR},
+      </if>
+      <if test="cusIndValue != null" >
+        CUS_IND_VALUE = #{cusIndValue,jdbcType=VARCHAR},
+      </if>
+      <if test="modifyDesc != null" >
+        MODIFY_DESC = #{modifyDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="suggest != null" >
+        SUGGEST = #{suggest,jdbcType=VARCHAR},
+      </if>
+      <if test="isupper != null" >
+        ISUPPER = #{isupper,jdbcType=VARCHAR},
+      </if>
+      <if test="lastModifyInd != null" >
+        LAST_MODIFY_IND = #{lastModifyInd,jdbcType=VARCHAR},
+      </if>
+      <if test="lastApprove != null" >
+        LAST_APPROVE = #{lastApprove,jdbcType=VARCHAR},
+      </if>
+      <if test="lastCusRisk != null" >
+        LAST_CUS_RISK = #{lastCusRisk,jdbcType=VARCHAR},
+      </if>
+      <if test="lastMngLmtPlan != null" >
+        LAST_MNG_LMT_PLAN = #{lastMngLmtPlan,jdbcType=VARCHAR},
+      </if>
+      <if test="lastCusValue != null" >
+        LAST_CUS_VALUE = #{lastCusValue,jdbcType=VARCHAR},
+      </if>
+      <if test="approveEndDate != null" >
+        APPROVE_END_DATE = #{approveEndDate,jdbcType=VARCHAR},
+      </if>
+      <if test="chkMode != null" >
+        CHK_MODE = #{chkMode,jdbcType=CHAR},
+      </if>
+      <if test="approveOrg != null" >
+        APPROVE_ORG = #{approveOrg,jdbcType=CHAR},
+      </if>
+      <if test="hasAddtionalSuggest != null" >
+        HAS_ADDTIONAL_SUGGEST = #{hasAddtionalSuggest,jdbcType=CHAR},
+      </if>
+      <if test="addtionalSuggest != null" >
+        ADDTIONAL_SUGGEST = #{addtionalSuggest,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where PSP_TASK_NO = #{pspTaskNo,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lc.ldms.model.PspCheckTask" >
+    update SSMDATA.PSP_CHECK_TASK
+    set CUS_MNG_NAME = #{cusMngName,jdbcType=VARCHAR},
+      CUS_MNG_ID = #{cusMngId,jdbcType=VARCHAR},
+      MODEL_NO = #{modelNo,jdbcType=VARCHAR},
+      CUS_ID = #{cusId,jdbcType=VARCHAR},
+      CUS_NAME = #{cusName,jdbcType=VARCHAR},
+      CUS_TYPE = #{cusType,jdbcType=CHAR},
+      CONT_ID = #{contId,jdbcType=VARCHAR},
+      BILL_ID = #{billId,jdbcType=VARCHAR},
+      CHK_TYPE = #{chkType,jdbcType=CHAR},
+      CHK_NUM = #{chkNum,jdbcType=DECIMAL},
+      CHK_BLN = #{chkBln,jdbcType=DECIMAL},
+      CRT_DATE = #{crtDate,jdbcType=CHAR},
+      RQR_FIN_DATE = #{rqrFinDate,jdbcType=CHAR},
+      REAL_FIN_DATE = #{realFinDate,jdbcType=CHAR},
+      TASK_PRO_BR_ID = #{taskProBrId,jdbcType=VARCHAR},
+      TASK_PRO_BR_NAME = #{taskProBrName,jdbcType=VARCHAR},
+      TSK_PRO_ID = #{tskProId,jdbcType=VARCHAR},
+      TSK_PRO_NAME = #{tskProName,jdbcType=VARCHAR},
+      INPUT_BR_ID = #{inputBrId,jdbcType=VARCHAR},
+      INPUT_BR_NAME = #{inputBrName,jdbcType=VARCHAR},
+      TASK_EXE_ID = #{taskExeId,jdbcType=VARCHAR},
+      TASK_EXE_NAME = #{taskExeName,jdbcType=VARCHAR},
+      MNG_BR_ID = #{mngBrId,jdbcType=VARCHAR},
+      MNG_BR_NAME = #{mngBrName,jdbcType=VARCHAR},
+      CHK_STATE = #{chkState,jdbcType=VARCHAR},
+      APPROVE_STATUS = #{approveStatus,jdbcType=CHAR},
+      MODIFY_IND = #{modifyInd,jdbcType=VARCHAR},
+      CUS_ASSORT = #{cusAssort,jdbcType=VARCHAR},
+      CUS_ASSORT_REASON = #{cusAssortReason,jdbcType=VARCHAR},
+      LMT_PLAN_DESC = #{lmtPlanDesc,jdbcType=VARCHAR},
+      CHECK_FINALLY_CON = #{checkFinallyCon,jdbcType=VARCHAR},
+      MNG_LMT_PLAN = #{mngLmtPlan,jdbcType=VARCHAR},
+      MEET_PERSONS = #{meetPersons,jdbcType=VARCHAR},
+      CHK_PLACE = #{chkPlace,jdbcType=VARCHAR},
+      CHK_DATE = #{chkDate,jdbcType=VARCHAR},
+      PRD_CODE = #{prdCode,jdbcType=VARCHAR},
+      PRD_NAME = #{prdName,jdbcType=VARCHAR},
+      IS_FEED_BACK = #{isFeedBack,jdbcType=CHAR},
+      FEED_BACK = #{feedBack,jdbcType=VARCHAR},
+      CUS_VALUE = #{cusValue,jdbcType=VARCHAR},
+      CUS_RISK = #{cusRisk,jdbcType=VARCHAR},
+      CUS_RISK_REASON = #{cusRiskReason,jdbcType=VARCHAR},
+      OTHER_REASON = #{otherReason,jdbcType=VARCHAR},
+      REPORT_SCORE = #{reportScore,jdbcType=DECIMAL},
+      ALL_CREDIT_REPORT_ANALYSIS = #{allCreditReportAnalysis,jdbcType=VARCHAR},
+      CUS_IND_VALUE = #{cusIndValue,jdbcType=VARCHAR},
+      MODIFY_DESC = #{modifyDesc,jdbcType=VARCHAR},
+      SUGGEST = #{suggest,jdbcType=VARCHAR},
+      ISUPPER = #{isupper,jdbcType=VARCHAR},
+      LAST_MODIFY_IND = #{lastModifyInd,jdbcType=VARCHAR},
+      LAST_APPROVE = #{lastApprove,jdbcType=VARCHAR},
+      LAST_CUS_RISK = #{lastCusRisk,jdbcType=VARCHAR},
+      LAST_MNG_LMT_PLAN = #{lastMngLmtPlan,jdbcType=VARCHAR},
+      LAST_CUS_VALUE = #{lastCusValue,jdbcType=VARCHAR},
+      APPROVE_END_DATE = #{approveEndDate,jdbcType=VARCHAR},
+      CHK_MODE = #{chkMode,jdbcType=CHAR},
+      APPROVE_ORG = #{approveOrg,jdbcType=CHAR},
+      HAS_ADDTIONAL_SUGGEST = #{hasAddtionalSuggest,jdbcType=CHAR},
+      ADDTIONAL_SUGGEST = #{addtionalSuggest,jdbcType=VARCHAR}
+    where PSP_TASK_NO = #{pspTaskNo,jdbcType=VARCHAR}
+  </update>
+  <select id="getPspCheckTaskList" parameterType="com.lc.ldms.model.PspCheckTask" resultMap="BaseResultMap">
+  select p.* from psp_check_task p where 1=1 and rownum &lt; 10
+  <if test="cusName != null and cusName != ''" >
+       and cus_Name like concat(concat('%',#{cusName,jdbcType=CHAR}),'%')
+  </if>
+  <if test="cusId != null and cusId != ''">
+  		and cus_Id like concat(concat('%',#{cusId,jdbcType=VARCHAR}),'%')
+  </if>
+  <if test="cusMngId != null and cusMngId != ''">
+  		and cus_mng_Id like concat(concat('%',#{cusMngId,jdbcType=CHAR}),'%')
+  </if>  
+  <if test="cusMngName != null and cusMngName != ''">
+  		and cus_mng_name like concat(concat('%',#{cusMngName,jdbcType=CHAR}),'%')
+  </if>    
+   <if test="pspTaskNo != null and pspTaskNo != ''">
+  		and psp_Task_No like concat(concat('%',#{pspTaskNo,jdbcType=CHAR}),'%')
+  </if>   
+  <if test="cusType != null and cusType != ''">
+  		and cus_Type like concat(concat('%',#{cusType,jdbcType=CHAR}),'%')
+  </if>    
+  <if test="crtDate != null and crtDate != ''">
+  		and crt_Date like concat(concat('%',#{crtDate,jdbcType=CHAR}),'%')
+  </if>      
+  <if test="chkType != null and chkType != ''">
+  		and chk_Type like concat(concat('%',#{chkType,jdbcType=CHAR}),'%')
+  </if>      
+  </select>
+  <insert id="addCusInfo" parameterType="com.lc.ldms.model.PspCheckTask" >
+  insert into Psp_Check_Task 
+          <!-- 动态sql拼接 prefix前缀 suffix后缀 suffixOverrides除去最后多余的,-->
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pspTaskNo!=null and pspTaskNo!=''">
+                psp_Task_No,
+            </if>
+            <if test="cusId!=null and cusId!=''">
+                cus_Id,
+            </if>
+            <if test="cusName!=null and cusName!=''">
+                cus_Name,
+            </if>
+            <if test="cusMngName!=null and cusMngName!=''">
+                cus_Mng_Name,
+            </if>
+            <if test="cusMngId!=null and cusMngId!=''">
+                cus_Mng_Id,
+            </if>  
+            <if test="chkType!=null and chkType!=''">
+                chk_Type,
+            </if>   
+            <if test="cusType!=null and cusType!=''">
+                cus_Type,
+            </if>  
+            <if test="crtDate!=null and crtDate!=''">
+                crt_Date,
+            </if>       
+        </trim>
+        <trim prefix="values(" suffix=")" suffixOverrides=",">
+            <if test="pspTaskNo!=null and pspTaskNo!=''">
+                #{pspTaskNo},
+            </if>
+            <if test="cusId!=null and cusId!=''">
+                #{cusId},
+            </if>
+            <if test="cusName!=null and cusName!=''">
+                #{cusName},
+            </if>
+            <if test="cusMngName!=null and cusMngName!=''">
+                #{cusMngName},
+            </if>
+            <if test="cusMngId!=null and cusMngId!=''">
+                #{cusMngId},
+            </if> 
+            <if test="chkType!=null and chkType!=''">
+                #{chkType},
+            </if> 
+            <if test="cusType!=null and cusType!=''">
+                #{cusType},
+            </if> 
+            <if test="crtDate!=null and crtDate!=''">
+                #{crtDate},
+            </if>
+        </trim>
+  </insert>
+  <update id="updateCusInfo" parameterType="com.lc.ldms.model.PspCheckTask">
+  update psp_check_task p 
+  <set>
+  <if test="pspTaskNo!=null and pspTaskNo!= ''">
+  p.psp_task_no = #{pspTaskNo},
+  </if>
+  <if test="cusId!=null and cusId!=''">
+  p.cus_id = #{cusId},
+  </if>
+            <if test="cusName!=null and cusName!=''">
+                cus_name = #{cusName},
+            </if>
+            <if test="cusMngName!=null and cusMngName!=''">
+                cus_mng_name = #{cusMngName},
+            </if>
+            <if test="cusMngId!=null and cusMngId!=''">
+               cus_mng_id = #{cusMngId},
+            </if>  
+            <if test="crtDate!=null and crtDate!=''">
+               crt_Date = #{crtDate},
+            </if> 
+  </set> 
+  where p.psp_task_no = #{pspTaskNo}
+  </update>
+  <delete id="deleteCusInfo" parameterType="java.lang.String">
+  delete from psp_check_task where psp_task_no=#{pspTaskNo}
+  </delete>
+</mapper>

@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lc.ldms.dao.ccmisCcapplyMapper" >
+  <resultMap id="ccmisCcapplyMap" type="com.lc.ldms.model.ccmisCcapply" >
+    <id column="CCAPPLYID" property="ccapplyid" jdbcType="CHAR" />
+    <result column="STOCKID" property="stockid" jdbcType="CHAR" />
+    <result column="APPLYTYPE" property="applytype" jdbcType="CHAR" />
+    <result column="APPLYDATE" property="applydate" jdbcType="CHAR" />
+    <result column="CIFNO" property="cifno" jdbcType="CHAR" />
+    <result column="CUSNAME" property="cusname" jdbcType="VARCHAR" />
+    <result column="MASTERCRDNO" property="mastercrdno" jdbcType="VARCHAR" />
+    <result column="ISDEGRADE" property="isdegrade" jdbcType="VARCHAR" />
+    <result column="ISSUPPLYTOPAY" property="issupplytopay" jdbcType="CHAR" />
+    <result column="TOPAYCIFNO" property="topaycifno" jdbcType="CHAR" />
+    <result column="DEGRADEPRDID" property="degradeprdid" jdbcType="CHAR" />
+    <result column="APPLYSOURCE" property="applysource" jdbcType="CHAR" />
+    <result column="RECOMMCARDNO" property="recommcardno" jdbcType="VARCHAR" />
+    <result column="RECOMMNAME" property="recommname" jdbcType="VARCHAR" />
+    <result column="RECOMMRELTYPE" property="recommreltype" jdbcType="CHAR" />
+    <result column="RECOMMTYPE" property="recommtype" jdbcType="CHAR" />
+    <result column="RECOMMUSERID" property="recommuserid" jdbcType="CHAR" />
+    <result column="RECOMMORGID" property="recommorgid" jdbcType="CHAR" />
+    <result column="INPUTUSERID" property="inputuserid" jdbcType="CHAR" />
+    <result column="INPUTORGID" property="inputorgid" jdbcType="CHAR" />
+    <result column="APPROVESTATUS" property="approvestatus" jdbcType="CHAR" />
+    <result column="ACHIEVE" property="achieve" jdbcType="CHAR" />
+    <result column="MOSTGUARTYPE" property="mostguartype" jdbcType="CHAR" />
+    <result column="SECONDGUARTYPE" property="secondguartype" jdbcType="CHAR" />
+    <result column="THIRDGUARTYPE" property="thirdguartype" jdbcType="CHAR" />
+    <result column="ISPRINTPASSWD" property="isprintpasswd" jdbcType="CHAR" />
+    <result column="SENDTYPE" property="sendtype" jdbcType="CHAR" />
+    <result column="SENDFEE" property="sendfee" jdbcType="VARCHAR" />
+    <result column="EMERGENCYFLAG" property="emergencyflag" jdbcType="CHAR" />
+    <result column="EMERGENCYFEE" property="emergencyfee" jdbcType="CHAR" />
+    <result column="GREENLINE" property="greenline" jdbcType="CHAR" />
+    <result column="INPUTDATE" property="inputdate" jdbcType="CHAR" />
+    <result column="RECOMMUSERNAME" property="recommusername" jdbcType="VARCHAR" />
+    <result column="STATEMENTMETHOD" property="statementmethod" jdbcType="CHAR" />
+    <result column="STATEMENTADDRESS" property="statementaddress" jdbcType="VARCHAR" />
+    <result column="STATEMENTZIPCODE" property="statementzipcode" jdbcType="VARCHAR" />
+    <result column="STATEMENTREF" property="statementref" jdbcType="VARCHAR" />
+    <result column="SENDORG" property="sendorg" jdbcType="VARCHAR" />
+    <result column="MANAGERORGID" property="managerorgid" jdbcType="CHAR" />
+    <result column="MANAGERUSERID" property="manageruserid" jdbcType="CHAR" />
+    <result column="MANAGERUSERNAME" property="managerusername" jdbcType="VARCHAR" />
+    <result column="PRODUCTID" property="productid" jdbcType="CHAR" />
+    <result column="PRODUCTNAME" property="productname" jdbcType="VARCHAR" />
+    <result column="CHECKNO" property="checkno" jdbcType="VARCHAR" />
+    <result column="APPROVENO" property="approveno" jdbcType="VARCHAR" />
+    <result column="ANONYMOUS" property="anonymous" jdbcType="CHAR" />
+    <result column="DONATEDAMT" property="donatedamt" jdbcType="VARCHAR" />
+    <result column="DONATEDOPTION" property="donatedoption" jdbcType="VARCHAR" />
+    <result column="MOTHERNAME" property="mothername" jdbcType="VARCHAR" />
+    <result column="MOTHERBIRTH" property="motherbirth" jdbcType="VARCHAR" />
+    <result column="FATHERNAME" property="fathername" jdbcType="VARCHAR" />
+    <result column="FATHERBIRTH" property="fatherbirth" jdbcType="VARCHAR" />
+    <result column="SCHOOLNAME" property="schoolname" jdbcType="VARCHAR" />
+    <result column="DONATEPOINT" property="donatepoint" jdbcType="VARCHAR" />
+    <result column="MEMORIALDAY" property="memorialday" jdbcType="VARCHAR" />
+    <result column="RESPECTPERSON" property="respectperson" jdbcType="VARCHAR" />
+    <result column="APPROVEPRODUCTID" property="approveproductid" jdbcType="VARCHAR" />
+    <result column="APPROVECREDITAMT" property="approvecreditamt" jdbcType="VARCHAR" />
+    <result column="PLIBORUP" property="pliborup" jdbcType="VARCHAR" />
+    <result column="ACMLLMT" property="acmllmt" jdbcType="VARCHAR" />
+    <result column="STATEMENTADDRESSTYPE" property="statementaddresstype" jdbcType="VARCHAR" />
+    <result column="APPLYCHANNEL" property="applychannel" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    CCAPPLYID, STOCKID, APPLYTYPE, APPLYDATE, CIFNO, CUSNAME, MASTERCRDNO, ISDEGRADE, 
+    ISSUPPLYTOPAY, TOPAYCIFNO, DEGRADEPRDID, APPLYSOURCE, RECOMMCARDNO, RECOMMNAME, RECOMMRELTYPE, 
+    RECOMMTYPE, RECOMMUSERID, RECOMMORGID, INPUTUSERID, INPUTORGID, APPROVESTATUS, ACHIEVE, 
+    MOSTGUARTYPE, SECONDGUARTYPE, THIRDGUARTYPE, ISPRINTPASSWD, SENDTYPE, SENDFEE, EMERGENCYFLAG, 
+    EMERGENCYFEE, GREENLINE, INPUTDATE, RECOMMUSERNAME, STATEMENTMETHOD, STATEMENTADDRESS, 
+    STATEMENTZIPCODE, STATEMENTREF, SENDORG, MANAGERORGID, MANAGERUSERID, MANAGERUSERNAME, 
+    PRODUCTID, PRODUCTNAME, CHECKNO, APPROVENO, ANONYMOUS, DONATEDAMT, DONATEDOPTION, 
+    MOTHERNAME, MOTHERBIRTH, FATHERNAME, FATHERBIRTH, SCHOOLNAME, DONATEPOINT, MEMORIALDAY, 
+    RESPECTPERSON, APPROVEPRODUCTID, APPROVECREDITAMT, PLIBORUP, ACMLLMT, STATEMENTADDRESSTYPE, 
+    APPLYCHANNEL
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ccmisCcapplyMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from LDMS.CCMIS_CCAPPLY
+    where CCAPPLYID = #{ccapplyid,jdbcType=CHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from LDMS.CCMIS_CCAPPLY
+    where CCAPPLYID = #{ccapplyid,jdbcType=CHAR}
+  </delete>
+  <insert id="insert" parameterType="com.lc.ldms.model.ccmisCcapply" >
+    insert into LDMS.CCMIS_CCAPPLY (CCAPPLYID, STOCKID, APPLYTYPE, 
+      APPLYDATE, CIFNO, CUSNAME, 
+      MASTERCRDNO, ISDEGRADE, ISSUPPLYTOPAY, 
+      TOPAYCIFNO, DEGRADEPRDID, APPLYSOURCE, 
+      RECOMMCARDNO, RECOMMNAME, RECOMMRELTYPE, 
+      RECOMMTYPE, RECOMMUSERID, RECOMMORGID, 
+      INPUTUSERID, INPUTORGID, APPROVESTATUS, 
+      ACHIEVE, MOSTGUARTYPE, SECONDGUARTYPE, 
+      THIRDGUARTYPE, ISPRINTPASSWD, SENDTYPE, 
+      SENDFEE, EMERGENCYFLAG, EMERGENCYFEE, 
+      GREENLINE, INPUTDATE, RECOMMUSERNAME, 
+      STATEMENTMETHOD, STATEMENTADDRESS, STATEMENTZIPCODE, 
+      STATEMENTREF, SENDORG, MANAGERORGID, 
+      MANAGERUSERID, MANAGERUSERNAME, PRODUCTID, 
+      PRODUCTNAME, CHECKNO, APPROVENO, 
+      ANONYMOUS, DONATEDAMT, DONATEDOPTION, 
+      MOTHERNAME, MOTHERBIRTH, FATHERNAME, 
+      FATHERBIRTH, SCHOOLNAME, DONATEPOINT, 
+      MEMORIALDAY, RESPECTPERSON, APPROVEPRODUCTID, 
+      APPROVECREDITAMT, PLIBORUP, ACMLLMT, 
+      STATEMENTADDRESSTYPE, APPLYCHANNEL)
+    values (#{ccapplyid,jdbcType=CHAR}, #{stockid,jdbcType=CHAR}, #{applytype,jdbcType=CHAR}, 
+      #{applydate,jdbcType=CHAR}, #{cifno,jdbcType=CHAR}, #{cusname,jdbcType=VARCHAR}, 
+      #{mastercrdno,jdbcType=VARCHAR}, #{isdegrade,jdbcType=VARCHAR}, #{issupplytopay,jdbcType=CHAR}, 
+      #{topaycifno,jdbcType=CHAR}, #{degradeprdid,jdbcType=CHAR}, #{applysource,jdbcType=CHAR}, 
+      #{recommcardno,jdbcType=VARCHAR}, #{recommname,jdbcType=VARCHAR}, #{recommreltype,jdbcType=CHAR}, 
+      #{recommtype,jdbcType=CHAR}, #{recommuserid,jdbcType=CHAR}, #{recommorgid,jdbcType=CHAR}, 
+      #{inputuserid,jdbcType=CHAR}, #{inputorgid,jdbcType=CHAR}, #{approvestatus,jdbcType=CHAR}, 
+      #{achieve,jdbcType=CHAR}, #{mostguartype,jdbcType=CHAR}, #{secondguartype,jdbcType=CHAR}, 
+      #{thirdguartype,jdbcType=CHAR}, #{isprintpasswd,jdbcType=CHAR}, #{sendtype,jdbcType=CHAR}, 
+      #{sendfee,jdbcType=VARCHAR}, #{emergencyflag,jdbcType=CHAR}, #{emergencyfee,jdbcType=CHAR}, 
+      #{greenline,jdbcType=CHAR}, #{inputdate,jdbcType=CHAR}, #{recommusername,jdbcType=VARCHAR}, 
+      #{statementmethod,jdbcType=CHAR}, #{statementaddress,jdbcType=VARCHAR}, #{statementzipcode,jdbcType=VARCHAR}, 
+      #{statementref,jdbcType=VARCHAR}, #{sendorg,jdbcType=VARCHAR}, #{managerorgid,jdbcType=CHAR}, 
+      #{manageruserid,jdbcType=CHAR}, #{managerusername,jdbcType=VARCHAR}, #{productid,jdbcType=CHAR}, 
+      #{productname,jdbcType=VARCHAR}, #{checkno,jdbcType=VARCHAR}, #{approveno,jdbcType=VARCHAR}, 
+      #{anonymous,jdbcType=CHAR}, #{donatedamt,jdbcType=VARCHAR}, #{donatedoption,jdbcType=VARCHAR}, 
+      #{mothername,jdbcType=VARCHAR}, #{motherbirth,jdbcType=VARCHAR}, #{fathername,jdbcType=VARCHAR}, 
+      #{fatherbirth,jdbcType=VARCHAR}, #{schoolname,jdbcType=VARCHAR}, #{donatepoint,jdbcType=VARCHAR}, 
+      #{memorialday,jdbcType=VARCHAR}, #{respectperson,jdbcType=VARCHAR}, #{approveproductid,jdbcType=VARCHAR}, 
+      #{approvecreditamt,jdbcType=VARCHAR}, #{pliborup,jdbcType=VARCHAR}, #{acmllmt,jdbcType=VARCHAR}, 
+      #{statementaddresstype,jdbcType=VARCHAR}, #{applychannel,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lc.ldms.model.ccmisCcapply" >
+    insert into LDMS.CCMIS_CCAPPLY
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="ccapplyid != null" >
+        CCAPPLYID,
+      </if>
+      <if test="stockid != null" >
+        STOCKID,
+      </if>
+      <if test="applytype != null" >
+        APPLYTYPE,
+      </if>
+      <if test="applydate != null" >
+        APPLYDATE,
+      </if>
+      <if test="cifno != null" >
+        CIFNO,
+      </if>
+      <if test="cusname != null" >
+        CUSNAME,
+      </if>
+      <if test="mastercrdno != null" >
+        MASTERCRDNO,
+      </if>
+      <if test="isdegrade != null" >
+        ISDEGRADE,
+      </if>
+      <if test="issupplytopay != null" >
+        ISSUPPLYTOPAY,
+      </if>
+      <if test="topaycifno != null" >
+        TOPAYCIFNO,
+      </if>
+      <if test="degradeprdid != null" >
+        DEGRADEPRDID,
+      </if>
+      <if test="applysource != null" >
+        APPLYSOURCE,
+      </if>
+      <if test="recommcardno != null" >
+        RECOMMCARDNO,
+      </if>
+      <if test="recommname != null" >
+        RECOMMNAME,
+      </if>
+      <if test="recommreltype != null" >
+        RECOMMRELTYPE,
+      </if>
+      <if test="recommtype != null" >
+        RECOMMTYPE,
+      </if>
+      <if test="recommuserid != null" >
+        RECOMMUSERID,
+      </if>
+      <if test="recommorgid != null" >
+        RECOMMORGID,
+      </if>
+      <if test="inputuserid != null" >
+        INPUTUSERID,
+      </if>
+      <if test="inputorgid != null" >
+        INPUTORGID,
+      </if>
+      <if test="approvestatus != null" >
+        APPROVESTATUS,
+      </if>
+      <if test="achieve != null" >
+        ACHIEVE,
+      </if>
+      <if test="mostguartype != null" >
+        MOSTGUARTYPE,
+      </if>
+      <if test="secondguartype != null" >
+        SECONDGUARTYPE,
+      </if>
+      <if test="thirdguartype != null" >
+        THIRDGUARTYPE,
+      </if>
+      <if test="isprintpasswd != null" >
+        ISPRINTPASSWD,
+      </if>
+      <if test="sendtype != null" >
+        SENDTYPE,
+      </if>
+      <if test="sendfee != null" >
+        SENDFEE,
+      </if>
+      <if test="emergencyflag != null" >
+        EMERGENCYFLAG,
+      </if>
+      <if test="emergencyfee != null" >
+        EMERGENCYFEE,
+      </if>
+      <if test="greenline != null" >
+        GREENLINE,
+      </if>
+      <if test="inputdate != null" >
+        INPUTDATE,
+      </if>
+      <if test="recommusername != null" >
+        RECOMMUSERNAME,
+      </if>
+      <if test="statementmethod != null" >
+        STATEMENTMETHOD,
+      </if>
+      <if test="statementaddress != null" >
+        STATEMENTADDRESS,
+      </if>
+      <if test="statementzipcode != null" >
+        STATEMENTZIPCODE,
+      </if>
+      <if test="statementref != null" >
+        STATEMENTREF,
+      </if>
+      <if test="sendorg != null" >
+        SENDORG,
+      </if>
+      <if test="managerorgid != null" >
+        MANAGERORGID,
+      </if>
+      <if test="manageruserid != null" >
+        MANAGERUSERID,
+      </if>
+      <if test="managerusername != null" >
+        MANAGERUSERNAME,
+      </if>
+      <if test="productid != null" >
+        PRODUCTID,
+      </if>
+      <if test="productname != null" >
+        PRODUCTNAME,
+      </if>
+      <if test="checkno != null" >
+        CHECKNO,
+      </if>
+      <if test="approveno != null" >
+        APPROVENO,
+      </if>
+      <if test="anonymous != null" >
+        ANONYMOUS,
+      </if>
+      <if test="donatedamt != null" >
+        DONATEDAMT,
+      </if>
+      <if test="donatedoption != null" >
+        DONATEDOPTION,
+      </if>
+      <if test="mothername != null" >
+        MOTHERNAME,
+      </if>
+      <if test="motherbirth != null" >
+        MOTHERBIRTH,
+      </if>
+      <if test="fathername != null" >
+        FATHERNAME,
+      </if>
+      <if test="fatherbirth != null" >
+        FATHERBIRTH,
+      </if>
+      <if test="schoolname != null" >
+        SCHOOLNAME,
+      </if>
+      <if test="donatepoint != null" >
+        DONATEPOINT,
+      </if>
+      <if test="memorialday != null" >
+        MEMORIALDAY,
+      </if>
+      <if test="respectperson != null" >
+        RESPECTPERSON,
+      </if>
+      <if test="approveproductid != null" >
+        APPROVEPRODUCTID,
+      </if>
+      <if test="approvecreditamt != null" >
+        APPROVECREDITAMT,
+      </if>
+      <if test="pliborup != null" >
+        PLIBORUP,
+      </if>
+      <if test="acmllmt != null" >
+        ACMLLMT,
+      </if>
+      <if test="statementaddresstype != null" >
+        STATEMENTADDRESSTYPE,
+      </if>
+      <if test="applychannel != null" >
+        APPLYCHANNEL,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="ccapplyid != null" >
+        #{ccapplyid,jdbcType=CHAR},
+      </if>
+      <if test="stockid != null" >
+        #{stockid,jdbcType=CHAR},
+      </if>
+      <if test="applytype != null" >
+        #{applytype,jdbcType=CHAR},
+      </if>
+      <if test="applydate != null" >
+        #{applydate,jdbcType=CHAR},
+      </if>
+      <if test="cifno != null" >
+        #{cifno,jdbcType=CHAR},
+      </if>
+      <if test="cusname != null" >
+        #{cusname,jdbcType=VARCHAR},
+      </if>
+      <if test="mastercrdno != null" >
+        #{mastercrdno,jdbcType=VARCHAR},
+      </if>
+      <if test="isdegrade != null" >
+        #{isdegrade,jdbcType=VARCHAR},
+      </if>
+      <if test="issupplytopay != null" >
+        #{issupplytopay,jdbcType=CHAR},
+      </if>
+      <if test="topaycifno != null" >
+        #{topaycifno,jdbcType=CHAR},
+      </if>
+      <if test="degradeprdid != null" >
+        #{degradeprdid,jdbcType=CHAR},
+      </if>
+      <if test="applysource != null" >
+        #{applysource,jdbcType=CHAR},
+      </if>
+      <if test="recommcardno != null" >
+        #{recommcardno,jdbcType=VARCHAR},
+      </if>
+      <if test="recommname != null" >
+        #{recommname,jdbcType=VARCHAR},
+      </if>
+      <if test="recommreltype != null" >
+        #{recommreltype,jdbcType=CHAR},
+      </if>
+      <if test="recommtype != null" >
+        #{recommtype,jdbcType=CHAR},
+      </if>
+      <if test="recommuserid != null" >
+        #{recommuserid,jdbcType=CHAR},
+      </if>
+      <if test="recommorgid != null" >
+        #{recommorgid,jdbcType=CHAR},
+      </if>
+      <if test="inputuserid != null" >
+        #{inputuserid,jdbcType=CHAR},
+      </if>
+      <if test="inputorgid != null" >
+        #{inputorgid,jdbcType=CHAR},
+      </if>
+      <if test="approvestatus != null" >
+        #{approvestatus,jdbcType=CHAR},
+      </if>
+      <if test="achieve != null" >
+        #{achieve,jdbcType=CHAR},
+      </if>
+      <if test="mostguartype != null" >
+        #{mostguartype,jdbcType=CHAR},
+      </if>
+      <if test="secondguartype != null" >
+        #{secondguartype,jdbcType=CHAR},
+      </if>
+      <if test="thirdguartype != null" >
+        #{thirdguartype,jdbcType=CHAR},
+      </if>
+      <if test="isprintpasswd != null" >
+        #{isprintpasswd,jdbcType=CHAR},
+      </if>
+      <if test="sendtype != null" >
+        #{sendtype,jdbcType=CHAR},
+      </if>
+      <if test="sendfee != null" >
+        #{sendfee,jdbcType=VARCHAR},
+      </if>
+      <if test="emergencyflag != null" >
+        #{emergencyflag,jdbcType=CHAR},
+      </if>
+      <if test="emergencyfee != null" >
+        #{emergencyfee,jdbcType=CHAR},
+      </if>
+      <if test="greenline != null" >
+        #{greenline,jdbcType=CHAR},
+      </if>
+      <if test="inputdate != null" >
+        #{inputdate,jdbcType=CHAR},
+      </if>
+      <if test="recommusername != null" >
+        #{recommusername,jdbcType=VARCHAR},
+      </if>
+      <if test="statementmethod != null" >
+        #{statementmethod,jdbcType=CHAR},
+      </if>
+      <if test="statementaddress != null" >
+        #{statementaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="statementzipcode != null" >
+        #{statementzipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="statementref != null" >
+        #{statementref,jdbcType=VARCHAR},
+      </if>
+      <if test="sendorg != null" >
+        #{sendorg,jdbcType=VARCHAR},
+      </if>
+      <if test="managerorgid != null" >
+        #{managerorgid,jdbcType=CHAR},
+      </if>
+      <if test="manageruserid != null" >
+        #{manageruserid,jdbcType=CHAR},
+      </if>
+      <if test="managerusername != null" >
+        #{managerusername,jdbcType=VARCHAR},
+      </if>
+      <if test="productid != null" >
+        #{productid,jdbcType=CHAR},
+      </if>
+      <if test="productname != null" >
+        #{productname,jdbcType=VARCHAR},
+      </if>
+      <if test="checkno != null" >
+        #{checkno,jdbcType=VARCHAR},
+      </if>
+      <if test="approveno != null" >
+        #{approveno,jdbcType=VARCHAR},
+      </if>
+      <if test="anonymous != null" >
+        #{anonymous,jdbcType=CHAR},
+      </if>
+      <if test="donatedamt != null" >
+        #{donatedamt,jdbcType=VARCHAR},
+      </if>
+      <if test="donatedoption != null" >
+        #{donatedoption,jdbcType=VARCHAR},
+      </if>
+      <if test="mothername != null" >
+        #{mothername,jdbcType=VARCHAR},
+      </if>
+      <if test="motherbirth != null" >
+        #{motherbirth,jdbcType=VARCHAR},
+      </if>
+      <if test="fathername != null" >
+        #{fathername,jdbcType=VARCHAR},
+      </if>
+      <if test="fatherbirth != null" >
+        #{fatherbirth,jdbcType=VARCHAR},
+      </if>
+      <if test="schoolname != null" >
+        #{schoolname,jdbcType=VARCHAR},
+      </if>
+      <if test="donatepoint != null" >
+        #{donatepoint,jdbcType=VARCHAR},
+      </if>
+      <if test="memorialday != null" >
+        #{memorialday,jdbcType=VARCHAR},
+      </if>
+      <if test="respectperson != null" >
+        #{respectperson,jdbcType=VARCHAR},
+      </if>
+      <if test="approveproductid != null" >
+        #{approveproductid,jdbcType=VARCHAR},
+      </if>
+      <if test="approvecreditamt != null" >
+        #{approvecreditamt,jdbcType=VARCHAR},
+      </if>
+      <if test="pliborup != null" >
+        #{pliborup,jdbcType=VARCHAR},
+      </if>
+      <if test="acmllmt != null" >
+        #{acmllmt,jdbcType=VARCHAR},
+      </if>
+      <if test="statementaddresstype != null" >
+        #{statementaddresstype,jdbcType=VARCHAR},
+      </if>
+      <if test="applychannel != null" >
+        #{applychannel,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lc.ldms.model.ccmisCcapply" >
+    update LDMS.CCMIS_CCAPPLY
+    <set >
+      <if test="stockid != null" >
+        STOCKID = #{stockid,jdbcType=CHAR},
+      </if>
+      <if test="applytype != null" >
+        APPLYTYPE = #{applytype,jdbcType=CHAR},
+      </if>
+      <if test="applydate != null" >
+        APPLYDATE = #{applydate,jdbcType=CHAR},
+      </if>
+      <if test="cifno != null" >
+        CIFNO = #{cifno,jdbcType=CHAR},
+      </if>
+      <if test="cusname != null" >
+        CUSNAME = #{cusname,jdbcType=VARCHAR},
+      </if>
+      <if test="mastercrdno != null" >
+        MASTERCRDNO = #{mastercrdno,jdbcType=VARCHAR},
+      </if>
+      <if test="isdegrade != null" >
+        ISDEGRADE = #{isdegrade,jdbcType=VARCHAR},
+      </if>
+      <if test="issupplytopay != null" >
+        ISSUPPLYTOPAY = #{issupplytopay,jdbcType=CHAR},
+      </if>
+      <if test="topaycifno != null" >
+        TOPAYCIFNO = #{topaycifno,jdbcType=CHAR},
+      </if>
+      <if test="degradeprdid != null" >
+        DEGRADEPRDID = #{degradeprdid,jdbcType=CHAR},
+      </if>
+      <if test="applysource != null" >
+        APPLYSOURCE = #{applysource,jdbcType=CHAR},
+      </if>
+      <if test="recommcardno != null" >
+        RECOMMCARDNO = #{recommcardno,jdbcType=VARCHAR},
+      </if>
+      <if test="recommname != null" >
+        RECOMMNAME = #{recommname,jdbcType=VARCHAR},
+      </if>
+      <if test="recommreltype != null" >
+        RECOMMRELTYPE = #{recommreltype,jdbcType=CHAR},
+      </if>
+      <if test="recommtype != null" >
+        RECOMMTYPE = #{recommtype,jdbcType=CHAR},
+      </if>
+      <if test="recommuserid != null" >
+        RECOMMUSERID = #{recommuserid,jdbcType=CHAR},
+      </if>
+      <if test="recommorgid != null" >
+        RECOMMORGID = #{recommorgid,jdbcType=CHAR},
+      </if>
+      <if test="inputuserid != null" >
+        INPUTUSERID = #{inputuserid,jdbcType=CHAR},
+      </if>
+      <if test="inputorgid != null" >
+        INPUTORGID = #{inputorgid,jdbcType=CHAR},
+      </if>
+      <if test="approvestatus != null" >
+        APPROVESTATUS = #{approvestatus,jdbcType=CHAR},
+      </if>
+      <if test="achieve != null" >
+        ACHIEVE = #{achieve,jdbcType=CHAR},
+      </if>
+      <if test="mostguartype != null" >
+        MOSTGUARTYPE = #{mostguartype,jdbcType=CHAR},
+      </if>
+      <if test="secondguartype != null" >
+        SECONDGUARTYPE = #{secondguartype,jdbcType=CHAR},
+      </if>
+      <if test="thirdguartype != null" >
+        THIRDGUARTYPE = #{thirdguartype,jdbcType=CHAR},
+      </if>
+      <if test="isprintpasswd != null" >
+        ISPRINTPASSWD = #{isprintpasswd,jdbcType=CHAR},
+      </if>
+      <if test="sendtype != null" >
+        SENDTYPE = #{sendtype,jdbcType=CHAR},
+      </if>
+      <if test="sendfee != null" >
+        SENDFEE = #{sendfee,jdbcType=VARCHAR},
+      </if>
+      <if test="emergencyflag != null" >
+        EMERGENCYFLAG = #{emergencyflag,jdbcType=CHAR},
+      </if>
+      <if test="emergencyfee != null" >
+        EMERGENCYFEE = #{emergencyfee,jdbcType=CHAR},
+      </if>
+      <if test="greenline != null" >
+        GREENLINE = #{greenline,jdbcType=CHAR},
+      </if>
+      <if test="inputdate != null" >
+        INPUTDATE = #{inputdate,jdbcType=CHAR},
+      </if>
+      <if test="recommusername != null" >
+        RECOMMUSERNAME = #{recommusername,jdbcType=VARCHAR},
+      </if>
+      <if test="statementmethod != null" >
+        STATEMENTMETHOD = #{statementmethod,jdbcType=CHAR},
+      </if>
+      <if test="statementaddress != null" >
+        STATEMENTADDRESS = #{statementaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="statementzipcode != null" >
+        STATEMENTZIPCODE = #{statementzipcode,jdbcType=VARCHAR},
+      </if>
+      <if test="statementref != null" >
+        STATEMENTREF = #{statementref,jdbcType=VARCHAR},
+      </if>
+      <if test="sendorg != null" >
+        SENDORG = #{sendorg,jdbcType=VARCHAR},
+      </if>
+      <if test="managerorgid != null" >
+        MANAGERORGID = #{managerorgid,jdbcType=CHAR},
+      </if>
+      <if test="manageruserid != null" >
+        MANAGERUSERID = #{manageruserid,jdbcType=CHAR},
+      </if>
+      <if test="managerusername != null" >
+        MANAGERUSERNAME = #{managerusername,jdbcType=VARCHAR},
+      </if>
+      <if test="productid != null" >
+        PRODUCTID = #{productid,jdbcType=CHAR},
+      </if>
+      <if test="productname != null" >
+        PRODUCTNAME = #{productname,jdbcType=VARCHAR},
+      </if>
+      <if test="checkno != null" >
+        CHECKNO = #{checkno,jdbcType=VARCHAR},
+      </if>
+      <if test="approveno != null" >
+        APPROVENO = #{approveno,jdbcType=VARCHAR},
+      </if>
+      <if test="anonymous != null" >
+        ANONYMOUS = #{anonymous,jdbcType=CHAR},
+      </if>
+      <if test="donatedamt != null" >
+        DONATEDAMT = #{donatedamt,jdbcType=VARCHAR},
+      </if>
+      <if test="donatedoption != null" >
+        DONATEDOPTION = #{donatedoption,jdbcType=VARCHAR},
+      </if>
+      <if test="mothername != null" >
+        MOTHERNAME = #{mothername,jdbcType=VARCHAR},
+      </if>
+      <if test="motherbirth != null" >
+        MOTHERBIRTH = #{motherbirth,jdbcType=VARCHAR},
+      </if>
+      <if test="fathername != null" >
+        FATHERNAME = #{fathername,jdbcType=VARCHAR},
+      </if>
+      <if test="fatherbirth != null" >
+        FATHERBIRTH = #{fatherbirth,jdbcType=VARCHAR},
+      </if>
+      <if test="schoolname != null" >
+        SCHOOLNAME = #{schoolname,jdbcType=VARCHAR},
+      </if>
+      <if test="donatepoint != null" >
+        DONATEPOINT = #{donatepoint,jdbcType=VARCHAR},
+      </if>
+      <if test="memorialday != null" >
+        MEMORIALDAY = #{memorialday,jdbcType=VARCHAR},
+      </if>
+      <if test="respectperson != null" >
+        RESPECTPERSON = #{respectperson,jdbcType=VARCHAR},
+      </if>
+      <if test="approveproductid != null" >
+        APPROVEPRODUCTID = #{approveproductid,jdbcType=VARCHAR},
+      </if>
+      <if test="approvecreditamt != null" >
+        APPROVECREDITAMT = #{approvecreditamt,jdbcType=VARCHAR},
+      </if>
+      <if test="pliborup != null" >
+        PLIBORUP = #{pliborup,jdbcType=VARCHAR},
+      </if>
+      <if test="acmllmt != null" >
+        ACMLLMT = #{acmllmt,jdbcType=VARCHAR},
+      </if>
+      <if test="statementaddresstype != null" >
+        STATEMENTADDRESSTYPE = #{statementaddresstype,jdbcType=VARCHAR},
+      </if>
+      <if test="applychannel != null" >
+        APPLYCHANNEL = #{applychannel,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where CCAPPLYID = #{ccapplyid,jdbcType=CHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lc.ldms.model.ccmisCcapply" >
+    update LDMS.CCMIS_CCAPPLY
+    set STOCKID = #{stockid,jdbcType=CHAR},
+      APPLYTYPE = #{applytype,jdbcType=CHAR},
+      APPLYDATE = #{applydate,jdbcType=CHAR},
+      CIFNO = #{cifno,jdbcType=CHAR},
+      CUSNAME = #{cusname,jdbcType=VARCHAR},
+      MASTERCRDNO = #{mastercrdno,jdbcType=VARCHAR},
+      ISDEGRADE = #{isdegrade,jdbcType=VARCHAR},
+      ISSUPPLYTOPAY = #{issupplytopay,jdbcType=CHAR},
+      TOPAYCIFNO = #{topaycifno,jdbcType=CHAR},
+      DEGRADEPRDID = #{degradeprdid,jdbcType=CHAR},
+      APPLYSOURCE = #{applysource,jdbcType=CHAR},
+      RECOMMCARDNO = #{recommcardno,jdbcType=VARCHAR},
+      RECOMMNAME = #{recommname,jdbcType=VARCHAR},
+      RECOMMRELTYPE = #{recommreltype,jdbcType=CHAR},
+      RECOMMTYPE = #{recommtype,jdbcType=CHAR},
+      RECOMMUSERID = #{recommuserid,jdbcType=CHAR},
+      RECOMMORGID = #{recommorgid,jdbcType=CHAR},
+      INPUTUSERID = #{inputuserid,jdbcType=CHAR},
+      INPUTORGID = #{inputorgid,jdbcType=CHAR},
+      APPROVESTATUS = #{approvestatus,jdbcType=CHAR},
+      ACHIEVE = #{achieve,jdbcType=CHAR},
+      MOSTGUARTYPE = #{mostguartype,jdbcType=CHAR},
+      SECONDGUARTYPE = #{secondguartype,jdbcType=CHAR},
+      THIRDGUARTYPE = #{thirdguartype,jdbcType=CHAR},
+      ISPRINTPASSWD = #{isprintpasswd,jdbcType=CHAR},
+      SENDTYPE = #{sendtype,jdbcType=CHAR},
+      SENDFEE = #{sendfee,jdbcType=VARCHAR},
+      EMERGENCYFLAG = #{emergencyflag,jdbcType=CHAR},
+      EMERGENCYFEE = #{emergencyfee,jdbcType=CHAR},
+      GREENLINE = #{greenline,jdbcType=CHAR},
+      INPUTDATE = #{inputdate,jdbcType=CHAR},
+      RECOMMUSERNAME = #{recommusername,jdbcType=VARCHAR},
+      STATEMENTMETHOD = #{statementmethod,jdbcType=CHAR},
+      STATEMENTADDRESS = #{statementaddress,jdbcType=VARCHAR},
+      STATEMENTZIPCODE = #{statementzipcode,jdbcType=VARCHAR},
+      STATEMENTREF = #{statementref,jdbcType=VARCHAR},
+      SENDORG = #{sendorg,jdbcType=VARCHAR},
+      MANAGERORGID = #{managerorgid,jdbcType=CHAR},
+      MANAGERUSERID = #{manageruserid,jdbcType=CHAR},
+      MANAGERUSERNAME = #{managerusername,jdbcType=VARCHAR},
+      PRODUCTID = #{productid,jdbcType=CHAR},
+      PRODUCTNAME = #{productname,jdbcType=VARCHAR},
+      CHECKNO = #{checkno,jdbcType=VARCHAR},
+      APPROVENO = #{approveno,jdbcType=VARCHAR},
+      ANONYMOUS = #{anonymous,jdbcType=CHAR},
+      DONATEDAMT = #{donatedamt,jdbcType=VARCHAR},
+      DONATEDOPTION = #{donatedoption,jdbcType=VARCHAR},
+      MOTHERNAME = #{mothername,jdbcType=VARCHAR},
+      MOTHERBIRTH = #{motherbirth,jdbcType=VARCHAR},
+      FATHERNAME = #{fathername,jdbcType=VARCHAR},
+      FATHERBIRTH = #{fatherbirth,jdbcType=VARCHAR},
+      SCHOOLNAME = #{schoolname,jdbcType=VARCHAR},
+      DONATEPOINT = #{donatepoint,jdbcType=VARCHAR},
+      MEMORIALDAY = #{memorialday,jdbcType=VARCHAR},
+      RESPECTPERSON = #{respectperson,jdbcType=VARCHAR},
+      APPROVEPRODUCTID = #{approveproductid,jdbcType=VARCHAR},
+      APPROVECREDITAMT = #{approvecreditamt,jdbcType=VARCHAR},
+      PLIBORUP = #{pliborup,jdbcType=VARCHAR},
+      ACMLLMT = #{acmllmt,jdbcType=VARCHAR},
+      STATEMENTADDRESSTYPE = #{statementaddresstype,jdbcType=VARCHAR},
+      APPLYCHANNEL = #{applychannel,jdbcType=VARCHAR}
+    where CCAPPLYID = #{ccapplyid,jdbcType=CHAR}
+  </update>
+  <select id="total" resultType="int">
+  select count(*) from CCMIS_CCAPPLY
+  </select>
+  <select id="list" resultMap="ccmisCcapplyMap">
+  SELECT * from ( SELECT a.*, ROWNUM rn FROM CCMIS_CCAPPLY a)
+  <if test="start!=null and count != null"> WHERE rn between  #{start} and #{count}</if>
+  </select>
+</mapper>

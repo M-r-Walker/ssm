@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lc.ldms.dao.uapclientEmployeeMapper" >
+  <resultMap id="uapclientEmployeeMap" type="com.lc.ldms.model.uapclientEmployee" >
+    <id column="EMPLOYEEID" property="employeeid" jdbcType="DECIMAL" />
+    <result column="EMPLOYEENAME" property="employeename" jdbcType="VARCHAR" />
+    <result column="CERTTYPE" property="certtype" jdbcType="CHAR" />
+    <result column="CERTNO" property="certno" jdbcType="VARCHAR" />
+    <result column="SEX" property="sex" jdbcType="CHAR" />
+    <result column="HOMEADDRESS" property="homeaddress" jdbcType="VARCHAR" />
+    <result column="HOMEPHONE" property="homephone" jdbcType="VARCHAR" />
+    <result column="COMPANYPHONE" property="companyphone" jdbcType="VARCHAR" />
+    <result column="MOBILEPHONE" property="mobilephone" jdbcType="VARCHAR" />
+    <result column="ORGID" property="orgid" jdbcType="VARCHAR" />
+    <result column="STATE" property="state" jdbcType="CHAR" />
+    <result column="LASTTIMESTAMP" property="lasttimestamp" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    EMPLOYEEID, EMPLOYEENAME, CERTTYPE, CERTNO, SEX, HOMEADDRESS, HOMEPHONE, COMPANYPHONE, 
+    MOBILEPHONE, ORGID, STATE, LASTTIMESTAMP
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="uapclientEmployeeMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from LDMS.UAPCLIENT_EMPLOYEE
+    where EMPLOYEEID = #{employeeid,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from LDMS.UAPCLIENT_EMPLOYEE
+    where EMPLOYEEID = #{employeeid,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="com.lc.ldms.model.uapclientEmployee" >
+    insert into LDMS.UAPCLIENT_EMPLOYEE (EMPLOYEEID, EMPLOYEENAME, CERTTYPE, 
+      CERTNO, SEX, HOMEADDRESS, 
+      HOMEPHONE, COMPANYPHONE, MOBILEPHONE, 
+      ORGID, STATE, LASTTIMESTAMP
+      )
+    values (#{employeeid,jdbcType=DECIMAL}, #{employeename,jdbcType=VARCHAR}, #{certtype,jdbcType=CHAR}, 
+      #{certno,jdbcType=VARCHAR}, #{sex,jdbcType=CHAR}, #{homeaddress,jdbcType=VARCHAR}, 
+      #{homephone,jdbcType=VARCHAR}, #{companyphone,jdbcType=VARCHAR}, #{mobilephone,jdbcType=VARCHAR}, 
+      #{orgid,jdbcType=VARCHAR}, #{state,jdbcType=CHAR}, #{lasttimestamp,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lc.ldms.model.uapclientEmployee" >
+    insert into LDMS.UAPCLIENT_EMPLOYEE
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="employeeid != null" >
+        EMPLOYEEID,
+      </if>
+      <if test="employeename != null" >
+        EMPLOYEENAME,
+      </if>
+      <if test="certtype != null" >
+        CERTTYPE,
+      </if>
+      <if test="certno != null" >
+        CERTNO,
+      </if>
+      <if test="sex != null" >
+        SEX,
+      </if>
+      <if test="homeaddress != null" >
+        HOMEADDRESS,
+      </if>
+      <if test="homephone != null" >
+        HOMEPHONE,
+      </if>
+      <if test="companyphone != null" >
+        COMPANYPHONE,
+      </if>
+      <if test="mobilephone != null" >
+        MOBILEPHONE,
+      </if>
+      <if test="orgid != null" >
+        ORGID,
+      </if>
+      <if test="state != null" >
+        STATE,
+      </if>
+      <if test="lasttimestamp != null" >
+        LASTTIMESTAMP,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="employeeid != null" >
+        #{employeeid,jdbcType=DECIMAL},
+      </if>
+      <if test="employeename != null" >
+        #{employeename,jdbcType=VARCHAR},
+      </if>
+      <if test="certtype != null" >
+        #{certtype,jdbcType=CHAR},
+      </if>
+      <if test="certno != null" >
+        #{certno,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=CHAR},
+      </if>
+      <if test="homeaddress != null" >
+        #{homeaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="homephone != null" >
+        #{homephone,jdbcType=VARCHAR},
+      </if>
+      <if test="companyphone != null" >
+        #{companyphone,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilephone != null" >
+        #{mobilephone,jdbcType=VARCHAR},
+      </if>
+      <if test="orgid != null" >
+        #{orgid,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=CHAR},
+      </if>
+      <if test="lasttimestamp != null" >
+        #{lasttimestamp,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lc.ldms.model.uapclientEmployee" >
+    update LDMS.UAPCLIENT_EMPLOYEE
+    <set >
+      <if test="employeename != null" >
+        EMPLOYEENAME = #{employeename,jdbcType=VARCHAR},
+      </if>
+      <if test="certtype != null" >
+        CERTTYPE = #{certtype,jdbcType=CHAR},
+      </if>
+      <if test="certno != null" >
+        CERTNO = #{certno,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        SEX = #{sex,jdbcType=CHAR},
+      </if>
+      <if test="homeaddress != null" >
+        HOMEADDRESS = #{homeaddress,jdbcType=VARCHAR},
+      </if>
+      <if test="homephone != null" >
+        HOMEPHONE = #{homephone,jdbcType=VARCHAR},
+      </if>
+      <if test="companyphone != null" >
+        COMPANYPHONE = #{companyphone,jdbcType=VARCHAR},
+      </if>
+      <if test="mobilephone != null" >
+        MOBILEPHONE = #{mobilephone,jdbcType=VARCHAR},
+      </if>
+      <if test="orgid != null" >
+        ORGID = #{orgid,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        STATE = #{state,jdbcType=CHAR},
+      </if>
+      <if test="lasttimestamp != null" >
+        LASTTIMESTAMP = #{lasttimestamp,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where EMPLOYEEID = #{employeeid,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lc.ldms.model.uapclientEmployee" >
+    update LDMS.UAPCLIENT_EMPLOYEE
+    set EMPLOYEENAME = #{employeename,jdbcType=VARCHAR},
+      CERTTYPE = #{certtype,jdbcType=CHAR},
+      CERTNO = #{certno,jdbcType=VARCHAR},
+      SEX = #{sex,jdbcType=CHAR},
+      HOMEADDRESS = #{homeaddress,jdbcType=VARCHAR},
+      HOMEPHONE = #{homephone,jdbcType=VARCHAR},
+      COMPANYPHONE = #{companyphone,jdbcType=VARCHAR},
+      MOBILEPHONE = #{mobilephone,jdbcType=VARCHAR},
+      ORGID = #{orgid,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=CHAR},
+      LASTTIMESTAMP = #{lasttimestamp,jdbcType=TIMESTAMP}
+    where EMPLOYEEID = #{employeeid,jdbcType=DECIMAL}
+  </update>
+  <select id="getEmployeeId" parameterType="int" resultType="int">
+  select EMPLOYEEID from UAPCLIENT_EMPLOYEE where EMPLOYEEID = #{employeeid,jdbcType=DECIMAL}
+  </select>
+  <select id="getEmployeeCountById" parameterType="Integer" resultType="int">
+  select count(*) from UAPCLIENT_EMPLOYEE where EMPLOYEEID = #{employeeid,jdbcType=DECIMAL}
+  </select>
+</mapper>

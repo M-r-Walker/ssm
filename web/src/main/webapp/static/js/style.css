@@ -1,0 +1,17 @@
+@charset "UTF-8";
+#header, .header{
+	display:block;
+	height: 37px;
+	_height:40px;
+	width: 1120px;
+	background: url(../threeCats.jpg) no-repeat;
+	text-align: right;
+	vertical-align: bottom;
+	padding-top: 59px;
+	_padding-top: 56px;
+	line-height: 40px;
+	color: #b9dcf5;
+}
+.header{background: url(../fimages/qt_03.jpg) no-repeat;}
+#header a{color:#525252; line-height:36px; text-decoration:none; margin-right:8px}
+#header a:hover{ color:#C30}
